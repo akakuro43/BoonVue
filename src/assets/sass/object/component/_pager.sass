@@ -1,0 +1,141 @@
++media-desktop
+  .c-pager
+    display: flex
+    justify-content: center
+    margin-top: 80px
+    // margin-bottom: 75px
+    .page-numbers
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      width: 42px
+      height: 42px
+      background: $white
+      box-shadow: 6px 6px 40px rgba($black,0.08)
+      border-radius: 50%
+      margin: 0 12px
+      font-size: 15px
+      font-weight: $fw-bold
+      letter-spacing: 0.14em
+      transition-duration: $ease-orignal
+      transition-duration: 0.2s
+      position: relative
+      color: $black
+      padding-left: 2px
+      +on-event
+        color: $black
+      &a
+        &:hover
+          background: $black
+          color: $white
+          &.next,
+          &.prev
+            &:before
+              border-right: 3px solid $white
+              border-top: 3px solid $white
+      &.next
+        &:before
+          +fitParent
+          right: 3px
+          margin: auto
+          content: ''
+          width: 10px
+          height: 10px
+          border-right: 2px solid $black
+          border-top: 2px solid $black
+          border-radius: 2px
+          transform: rotate(45deg)
+          transition-duration: $ease-orignal
+          transition-duration: 0.2s
+      &.prev
+        &:before
+          +fitParent
+          left: 3px
+          margin: auto
+          content: ''
+          width: 10px
+          height: 10px
+          border-right: 2px solid $black
+          border-top: 2px solid $black
+          border-radius: 2px
+          transform: rotate(-135deg)
+          transition-duration: $ease-orignal
+          transition-duration: 0.2s
+
+      &.current
+        background: $black
+        color: $white
++media-mobile
+  .c-pager
+    display: flex
+    justify-content: center
+    margin-top: 80px
+    // margin-bottom: 75px
+    .page-numbers
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      width: 36px
+      height: 36px
+      background: $white
+      box-shadow: 6px 6px 40px rgba($black,0.08)
+      border-radius: 50%
+      margin: 0 12px
+      font-size: 14px
+      font-weight: $fw-bold
+      letter-spacing: 0.14em
+      transition-duration: $ease-orignal
+      transition-duration: 0.2s
+      position: relative
+      color: $black
+      padding-left: 3px
+      +on-event
+        color: $black
+      &a
+        &:hover
+          background: $black
+          color: $white
+          &.next,
+          &.prev
+            &:before
+              border-right: 3px solid $white
+              border-top: 3px solid $white
+      &.next
+        &:before
+          +fitParent
+          right: 3px
+          margin: auto
+          content: ''
+          width: 8px
+          height: 8px
+          border-right: 2px solid $black
+          border-top: 2px solid $black
+          border-radius: 2px
+          transform: rotate(45deg)
+          transition-duration: $ease-orignal
+          transition-duration: 0.2s
+      &.prev
+        &:before
+          +fitParent
+          left: 3px
+          margin: auto
+          content: ''
+          width: 8px
+          height: 8px
+          border-right: 2px solid $black
+          border-top: 2px solid $black
+          border-radius: 2px
+          transform: rotate(-135deg)
+          transition-duration: $ease-orignal
+          transition-duration: 0.2s
+      &:hover
+        background: $black
+        color: $white
+        &.next,
+        &.prev
+          &:before
+            border-right: 3px solid $white
+            border-top: 3px solid $white
+      &.current
+        background: $black
+        color: $white

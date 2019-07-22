@@ -1,0 +1,46 @@
+{
+  "name": "groxiVue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "watch": "npm-run-all watch:*",
+    "build": "npm-run-all build:*",
+    "watch:serve": "vue-cli-service serve",
+    "build:build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "watch:file": "cpx \"./src/**/{*.html,*.jpg,*.png,*.gif,*.svg,*.eot,*.ttf,*.woff,*.woff2,*.pdf,package.json}\" ./dist",
+    "build:file": "cpx \"./src/**/{*.html,*.jpg,*.png,*.gif,*.svg,*.eot,*.ttf,*.woff,*.woff2,*.pdf,package.json}\" ./dist"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-meta": "^1.6.0",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "gsap": "^2.0.2",
+    "pixi.js": "^4.8.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "axios": "^0.19.0",
+    "babel-eslint": "^10.0.1",
+    "cpx": "^1.5.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-pug": "^1.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "lottie-web": "^5.5.5",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "prerender-spa-plugin": "^3.4.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "three": "^0.105.2",
+    "three-svg-loader": "^0.2.4",
+    "vue-analytics": "^5.17.0",
+    "vue-body-class": "^2.0.0-beta.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

@@ -1,0 +1,22 @@
+// #ScreenTransition
+  --------------------------------------------------------------------------
+.l-screen-transition
+  +fitParent(fixed)
+  top: -50px
+  height: calc(100vh + 100px)
+  transform: scaleY(0)
+  transform-origin: bottom
+  z-index: -1
+  background: #f1f1f1
+  // background: $light-orange
+  will-change: transform
+
+  &.is-screen-transition--in
+    z-index: 999
+    transition: transform 0.4s $ease-out
+    transform: scaleY(1)
+    &.is-screen-transition--out
+      z-index: 999
+      transform-origin: top!important
+      transition: transform 0.6s $ease-in-quad
+      transform: scaleY(0)

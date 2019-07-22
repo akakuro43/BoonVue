@@ -1,0 +1,31 @@
+// #Headline
+  --------------------------------------------------------------------------
++media-desktop
+  .c-headline1
+    display: flex
+    flex-direction: column
+    span
+      &.en
+        +setEn
+        font-size: 135px
+        line-height: .75
+        white-space: pre
+      &.ja
+        margin-top: 56px
+        font-size: 14px
+        font-weight: $fw-black
+
++media-mobile
+  .c-headline1
+    display: flex
+    flex-direction: column
+    span
+      &.en
+        +setEn
+        font-size: 96px
+        line-height: .75
+        white-space: pre
+      &.ja
+        margin-top: 24px
+        font-size: 14px
+        font-weight: $fw-black

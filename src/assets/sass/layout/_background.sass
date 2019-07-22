@@ -1,0 +1,16 @@
+// #Background
+  --------------------------------------------------------------------------
+.l-bg
+  +fitParent(fixed)
+  z-index: -1
+  transition: 0.4s $ease-out
+  &.is-white
+    transition: 0.4s $ease-out!important
+    background: $white!important
+    &.is-orange-out
+      transition: 0s $ease-out!important
+      background: $light-orange!important
+  &.is-orange
+    background: $light-orange!important
+    &.is-white
+      background: $white!important
