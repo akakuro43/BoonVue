@@ -52,6 +52,32 @@
                     p.description
                       span.inline-text Branding Website
       section.s-section2
+        .c-inner
+          ul.point-list
+            li.item
+              accordion
+                h2.key(slot="title")
+                  |You may use special comments to
+                p.text(slot="body")
+                  |You may use special comments toYou may use special comments toYou may use special comments to
+            li.item
+              accordion
+                h2.key(slot="title")
+                  |You may use special comments to
+                p.text(slot="body")
+                  |You may use special comments toYou may use special comments toYou may use special comments toYou may use special comments toYou may use special comments toYou may use special comments to
+            li.item
+              accordion
+                h2.key(slot="title")
+                  |You may use special comments to
+                p.text(slot="body")
+                  |You may use special comments toYou may use special comments toYou may use special comments to
+            li.item
+              accordion
+                h2.key(slot="title")
+                  |You may use special comments to
+                p.text(slot="body")
+                  |You may use special comments toYou may use special comments toYou may use special comments to
       section.s-section3
     Footer
 </template>
@@ -61,6 +87,7 @@ import meta from '@/variables/meta.js';
 import vueSVG from '@/modules/vue-svg/vueSVG';
 import appearObject from '@/modules/appearObject';
 import parallaxObject from '@/modules/parallaxObject';
+import accordion from '@/modules/accordion';
 import { mapState } from 'vuex';
 import Footer from '@/layouts/Footer';
 import vueImg from '@/modules/vueImg';
@@ -72,7 +99,8 @@ export default {
     vueSVG,
     vueImg,
     appearObject,
-    parallaxObject
+    parallaxObject,
+    accordion
   },
   computed: {
     ...mapState( 'window', [ 'height', 'isTouch', ]),
@@ -220,6 +248,22 @@ export default {
 
     .s-section2
       padding-top: 200px
-
+      .point-list
+        & > .item
+          margin-top: -1px
+          .key
+            +setEn
+            font-size: 24px
+            border-top: 1px solid #f1f1f1
+            border-bottom: 1px solid #f1f1f1
+            padding: 24px 0
+            font-weight: $fw-regular
+          .text
+            +setEn
+            +setFont(16px,1.75)
+            padding: 32px 0
+            font-weight: $fw-regular
+    .s-section3
+      padding-top: 200px
   +media-mobile
 </style>

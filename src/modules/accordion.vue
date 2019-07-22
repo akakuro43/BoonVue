@@ -8,9 +8,7 @@
 </template>
 <script>
 
-    import { mapState } from 'vuex';
-
-
+    import sleep from '@/utilities/Sleep.js';
     export default {
         name: 'accordion',
         props: {
@@ -20,26 +18,6 @@
              isOpened: false
           };
         },
-        watch: {
-            $route: 'resize',
-        },
-
-        computed: {
-            ...mapState('window', [
-                'width',
-                'height',
-                'isTouch',
-                'isSP',
-                'isPC',
-                'device',
-            ]),
-            ...mapState('scroll', [
-                'scrollCurrent',
-                'scrollLast',
-                'rate',
-            ]),
-        },
-
         created() {
 
         },
@@ -53,12 +31,10 @@
         },
 
         methods: {
-          accordionToggle: function(){
+          async accordionToggle(){
             this.isOpened = !this.isOpened;
-            setTimeout(()=>{
-              this.$eventHub.$emit('resize');
-            },1200)
-
+            await sleep(1200)
+            this.$eventHub.$emit('resize');
           },
           beforeEnter: function(el) {
             el.style.height = '0';
@@ -76,10 +52,11 @@
     }
 </script>
 
-<style lang="sass" scoped="">
+<style lang="sass" scoped>
 .js-accordion
   &--target
     transition: height 0.4s ease-in-out
+    overflow: hidden
   // (略)
   &-enter-active
     animation-duration: 1s
