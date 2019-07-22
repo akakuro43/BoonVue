@@ -17,7 +17,7 @@ header.l-header
   cling.cling-github-link
     .github-link(data-custom-cursor)
       vueSVG(keyname="github" width="24")
-      a.link(href="#", target="_blank")
+      a.link(href="https://github.com/akakuro43/BoonVue", target="_blank")
 </template>
 
 <script>
