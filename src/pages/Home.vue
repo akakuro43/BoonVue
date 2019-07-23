@@ -79,6 +79,28 @@
                 p.text(slot="body")
                   |You may use special comments toYou may use special comments toYou may use special comments to
       section.s-section3
+        .c-inner
+          swiper(v-bind:slidesPerView=3, v-bind:centeredSlides='false')
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
+            .slide.swiper-slide
+              vueImg(src="/assets/images/common/dummyImg.png")
     Footer
 </template>
 
@@ -91,6 +113,8 @@ import accordion from '@/modules/accordion';
 import { mapState } from 'vuex';
 import Footer from '@/layouts/Footer';
 import vueImg from '@/modules/vueImg';
+import swiper from '@/modules/swiper';
+
 export default {
   name: 'home',
   metaInfo: meta(),
@@ -100,7 +124,8 @@ export default {
     vueImg,
     appearObject,
     parallaxObject,
-    accordion
+    accordion,
+    swiper
   },
   computed: {
     ...mapState( 'window', [ 'height', 'isTouch', ]),
@@ -109,9 +134,12 @@ export default {
   created() {
   },
   mounted() {
+
     // add event
     // this.$eventHub.$on('hoge', this.methos1);
     // this.$eventHub.$on('hoge2', this.methos2);
+
+
 
   },
   beforeDestroy() {
@@ -130,6 +158,11 @@ export default {
 
 <style lang="sass" scoped>
   +media-desktop
+    .slider-container
+      .slider-wrapper
+        .slide
+          .img-wapper
+            +setImg(100%)
     .s-section1
       padding-top: 200px
       .is-appear

@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.img-wapper
     // imgtag
     img.v-img(v-if="src != null",:src='imgPath', :alt='imgAlt')
     // background

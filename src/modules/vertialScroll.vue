@@ -3,7 +3,7 @@
       #js-vertial-scroll
         slot
       div(v-if="progression" ref="line" class="c-progress u-fixed u-pos-tl u-fit-w")
-        .progress-value
+        .progress-value(v-bind:style="`transform: scaleY(${progress})`")
 </template>
 <script>
     import { mapState, mapActions } from 'vuex';
@@ -25,7 +25,8 @@
           return {
             onVS: false,
             isRun: false,
-            ease: OPTIONS.EASE
+            ease: OPTIONS.EASE,
+            progress: 0
           };
         },
         watch: {
@@ -132,7 +133,8 @@
               scrollProgress: scrollProgress,
             });
 
-            this.$progressValue.style.transform = `scaleY(${scrollProgress})`;
+            // this.$progressValue.style.transform = `scaleY(${scrollProgress})`;
+            this.progress = scrollProgress;
 
             if(!this.onVS) return
             if(!this.isRun) return
