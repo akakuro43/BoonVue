@@ -17,40 +17,43 @@
               span.curtain
           ul.work-list
             li.item
-              parallax-object.thumb(v-bind:rangeY="0.01", data-custom-cursor)
-                .inner
-                  vueImg.js-bg-img(bgImg="/assets/images/device/top/work1.jpg")
-                  .curtain
-                  a.link(href="https://unsplash.com/photos/ixedg2mKs3w" target="_blank")
+              mouseParallaxObject(v-bind:isAxisXOnly='true')
+                parallax-object.thumb(v-bind:rangeY="0.01", data-custom-cursor)
+                  .inner
+                    vueImg.js-bg-img(bgImg="/assets/images/device/top/work1.jpg")
+                    .curtain
+                    a.link(href="https://unsplash.com/photos/ixedg2mKs3w" target="_blank")
 
-                  appearObject.tag(offset=0)
-                    h2.client
-                      span.inline-text BRUCE
-                    p.description
-                      span.inline-text Branding Website
+                    appearObject.tag(offset=0)
+                      h2.client
+                        span.inline-text BRUCE
+                      p.description
+                        span.inline-text Branding Website
 
             li.item
-              parallax-object.thumb(v-bind:rangeY="0.04", data-custom-cursor)
-                .inner
-                  vueImg.js-bg-img(bgImg="/assets/images/device/top/work2.jpg")
-                  .curtain
-                  a.link(href="https://unsplash.com/photos/XQvpN3j_mVo" target="_blank")
-                  appearObject.tag(offset=0)
-                    h2.client
-                      span.inline-text HOLYOAKE
-                    p.description
-                      span.inline-text Branding Website
+              mouseParallaxObject(v-bind:isAxisXOnly='true', v-bind:isReverseX='true')
+                parallax-object.thumb(v-bind:rangeY="0.04", data-custom-cursor)
+                  .inner
+                    vueImg.js-bg-img(bgImg="/assets/images/device/top/work2.jpg")
+                    .curtain
+                    a.link(href="https://unsplash.com/photos/XQvpN3j_mVo" target="_blank")
+                    appearObject.tag(offset=0)
+                      h2.client
+                        span.inline-text HOLYOAKE
+                      p.description
+                        span.inline-text Branding Website
             li.item
-              parallax-object.thumb(v-bind:rangeY="0.07")
-                .inner
-                  vueImg.js-bg-img(bgImg="/assets/images/device/top/work3.jpg")
-                  .curtain
-                  a.link(href="https://unsplash.com/photos/yzhLs9Zgwdo" target="_blank")
-                  appearObject.tag(offset=0)
-                    h2.client
-                      span.inline-text GRUBER
-                    p.description
-                      span.inline-text Branding Website
+              mouseParallaxObject(v-bind:isAxisXOnly='true')
+                parallax-object.thumb(v-bind:rangeY="0.07")
+                  .inner
+                    vueImg.js-bg-img(bgImg="/assets/images/device/top/work3.jpg")
+                    .curtain
+                    a.link(href="https://unsplash.com/photos/yzhLs9Zgwdo" target="_blank")
+                    appearObject.tag(offset=0)
+                      h2.client
+                        span.inline-text GRUBER
+                      p.description
+                        span.inline-text Branding Website
       section.s-section2
         .c-inner
           ul.point-list
@@ -109,6 +112,7 @@ import meta from '@/variables/meta.js';
 import vueSVG from '@/modules/vue-svg/vueSVG';
 import appearObject from '@/modules/appearObject';
 import parallaxObject from '@/modules/parallaxObject';
+import mouseParallaxObject from '@/modules/mouseParallaxObject';
 import accordion from '@/modules/accordion';
 import { mapState } from 'vuex';
 import Footer from '@/layouts/Footer';
@@ -124,6 +128,7 @@ export default {
     vueImg,
     appearObject,
     parallaxObject,
+    mouseParallaxObject,
     accordion,
     swiper
   },
