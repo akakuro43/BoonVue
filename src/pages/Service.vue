@@ -266,6 +266,7 @@ export default {
 
 
   name: 'service',
+  metaInfo: meta('service'),
   components: {
     Footer,
     vueSVG
@@ -276,7 +277,6 @@ export default {
   mounted() {
 
   },
-  metaInfo: meta('service'),
   methods: {
     ...mapMutations(["increment", "decrement"])
   }

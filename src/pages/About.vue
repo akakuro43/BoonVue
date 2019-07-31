@@ -77,6 +77,7 @@ export default {
 
 
   name: 'about',
+  metaInfo: meta('about'),
   components: {
     Footer,
     vueSVG,
@@ -88,7 +89,6 @@ export default {
   mounted() {
 
   },
-  metaInfo: meta('about'),
   methods: {
     ...mapMutations(["increment", "decrement"])
 

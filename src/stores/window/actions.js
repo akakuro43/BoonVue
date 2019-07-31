@@ -9,6 +9,9 @@ const actions = {
     },
     afterAppear: (context) => {
       context.commit('SET_IS_FIRST_PAGE_APPEAR', false);
+    },
+    beforeEnterPage: (context, val) => {
+      context.commit('SET_CURRENT_PAGE', val);
     }
 };
 

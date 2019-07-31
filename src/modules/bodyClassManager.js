@@ -39,6 +39,7 @@ class BodyClassManager {
             }
             document.body.className = '';
             document.body.className = (this.bodyClass + additionalClassName).trim();
+            document.body.dataset.pageId = to.name;
 
             next();
 

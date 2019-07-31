@@ -68,6 +68,7 @@
               'isSP',
               'isPC',
               'device',
+              'currentPage',
               'isFirstPageAppear',
           ]),
       },
@@ -76,6 +77,7 @@
           'window', {
             'windowResize': 'resize',
             'windowAfterAppear': 'afterAppear',
+            'windowBeforeEnterPage': 'beforeEnterPage',
           },
         ),
         ...mapActions(
@@ -87,6 +89,9 @@
         // PAGE ENTER
         // ----------------
         beforePageEnter(el) {
+          let pageID =  document.querySelector('body').dataset.pageId;
+          this.windowBeforeEnterPage(pageID);
+          console.log(this.currentPage);
           new UIDelayStepper(el).run();
           //- console.log(this.isFirstPageAppear)
           //- console.log('beforePageEnter')

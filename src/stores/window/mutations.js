@@ -17,6 +17,9 @@ const mutations = {
     SET_DEVICE: (state, val) => {
         state.device = val;
     },
+    SET_CURRENT_PAGE: (state, val) => {
+        state.currentPage = val;
+    },
     SET_IS_FIRST_PAGE_APPEAR: (state, val) => {
         state.isFirstPageAppear = val;
     }

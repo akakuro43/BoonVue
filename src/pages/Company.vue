@@ -371,6 +371,7 @@ export default {
 
 
   name: 'company',
+  metaInfo: meta('company'),
   components: {
     Footer,
   },
@@ -388,7 +389,6 @@ export default {
       // this.$eventHub.$emit('resize');
     });
   },
-  metaInfo: meta('company'),
   methods: {
     ...mapMutations(["increment", "decrement"])
 

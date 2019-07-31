@@ -25,6 +25,7 @@ export default {
 
 
   name: 'contact',
+  metaInfo: meta('contact'),
   components: {
     Footer,
     From
@@ -36,7 +37,6 @@ export default {
   },
   mounted() {
   },
-  metaInfo: meta('contact'),
   methods: {
     ...mapMutations(["increment", "decrement"])
   }

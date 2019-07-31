@@ -11,6 +11,7 @@ const state = {
     isSP: false,
     isPC: false,
     device: '',
+    currentPage: '',
     isFirstPageAppear: true
 };
 
