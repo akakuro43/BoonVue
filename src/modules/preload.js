@@ -1,5 +1,5 @@
 
-export default function(resolve, isLog) {
+export default function(resolve, isPC, isLog) {
   isLog = (isLog == null) ? false : isLog;
 
   const
@@ -13,25 +13,20 @@ export default function(resolve, isLog) {
   const imgArray = [];
   setImgArray();
 
-  if(isLog) {
-    // console.log(imgArray.length);
-    console.log(imgArray);
-  }
+  if(isLog) console.log(imgArray);
 
 
   function setImgArray() {
-    if (imgs.length > 0 || bgImgs.length > 0 || bgImgsPC.length > 0 || bgImgsSP.length > 0) {
-      let count = 0;
+    if (
+      imgs.length > 0 || imgsPC.length > 0 || imgsSP.length > 0 ||
+      bgImgs.length > 0 || bgImgsPC.length > 0 || bgImgsSP.length > 0) {
       for (let i = 0; i < imgs.length; i++) {
         imgArray.push(imgs[i].src);
-        count++;
       }
       for (let i = 0; i < bgImgs.length; i++) {
         let elm = bgImgs[i];
 
-
         let img = elm.ownerDocument.defaultView.getComputedStyle(elm, null).backgroundImage;
-
 
         if (img.indexOf('linear-gradient') != -1) continue;
         let url = img.replace(/(url\(|\)|")/g, '');
@@ -40,12 +35,10 @@ export default function(resolve, isLog) {
         }
         if (url == 'none' || url == '') continue;
         imgArray.push(url);
-        count++;
       }
-      if(window.isPC) {
+      if(isPC) {
         for (let i = 0; i < imgsPC.length; i++) {
           imgArray.push(imgsPC[i].src);
-          count++;
         }
         for (let i = 0; i < bgImgsPC.length; i++) {
           let elm = bgImgsPC[i];
@@ -57,12 +50,10 @@ export default function(resolve, isLog) {
           }
           if(url == 'none' || url == '') continue;
           imgArray.push(url);
-          count++;
         }
       } else {
         for (let i = 0; i < imgsSP.length; i++) {
           imgArray.push(imgsSP[i].src);
-          count++;
         }
         for (let i = 0; i < bgImgsSP.length; i++) {
           let elm = bgImgsSP[i];
@@ -74,7 +65,6 @@ export default function(resolve, isLog) {
           }
           if (url == 'none' || url == '') continue;
           imgArray.push(url);
-          count++;
         }
       }
       if(imgArray.length == 0) handleComplete();
@@ -114,11 +104,11 @@ export default function(resolve, isLog) {
   }
 
   function handleComplete() {
-    console.log('handleComplete')
+    // console.log('handleComplete')
     resolve();
   }
 
   function handleFileComplete(progress) {
-    console.log(progress)
+    if(isLog) console.log(progress);
   }
 }

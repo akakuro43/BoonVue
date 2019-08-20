@@ -97,48 +97,30 @@
         beforePageEnter(el) {
           let pageID =  document.querySelector('body').dataset.pageId;
           this.setPageId(pageID);
-          console.log(this.currentPage);
+          // console.log(this.currentPage);
           new UIDelayStepper(el).run();
-          //- console.log(this.isFirstPageAppear)
-          //- console.log('beforePageEnter')
           this.$eventHub.$emit('beforePageEnter');
           TweenMax.set(el, { opacity: 0 });
         },
-        //- async pageEnter(el, done) {
-        //-   console.log('enter')
-        //-
-        //-   //- setTimeout(()=> {
-        //-   await sleep(10)
-        //-   preload(true)
-        //-   done();
-        //-   //- },10)
-        //- },
         async pageEnter(el, done) {
-          //- console.log('enter')
           await sleep(10)
           let from = new Date();
           let promise = new Promise((resolve) => {
             // preload start
-            preload(resolve, true)
+            preload(resolve, this.isPC, false)
           });
           promise.then((result) => {
             let to = new Date();
             let ms = to.getTime() - from.getTime();
-            console.log(ms);
             let enterTime = this.enterTime - ms;
-            console.log(enterTime);
             enterTime = (enterTime <= 0) ? 0 : enterTime;
             setTimeout(()=>{
               // preload が完了するとdoneを呼ぶ
               done();
             },enterTime)
-          })
-
-
-          //- },10)
+          });
         },
         afterPageEnter(el) {
-          console.log('afterPageEnter')
           TweenMax.to(el, 0.25, { opacity: 1, ease: Power2.easeOut });
           this.$eventHub.$emit('afterPageEnter');
 
@@ -148,20 +130,17 @@
         // ----------------
         // Before Leave
         beforePageLeave(el) {
-          //- console.log('beforePageLeave')
           this.$eventHub.$emit('beforePageLeave');
           TweenMax.to(el, 0.25, { opacity: 0, ease: Power2.easeOut });
         },
         // Leave
         pageLeave(el, done) {
-          //- console.log('pageLeave')
           setTimeout(()=> {
             done();
           },this.leaveTime)
         },
         // After Leave
         afterPageLeave() {
-          //- console.log('afterPageLeave')
           this.$eventHub.$emit('afterPageLeave');
           this.loaded();
           this.resize();
