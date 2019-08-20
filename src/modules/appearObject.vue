@@ -23,7 +23,7 @@ export default {
     },
 
     computed: {
-        ...mapState('window', [
+        ...mapState('device', [
             'isTouch',
             'height',
         ]),

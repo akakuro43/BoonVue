@@ -9,7 +9,7 @@
     export default {
         name: 'customCursor',
         computed: {
-            ...mapState('window', [
+            ...mapState('device', [
               'width',
               'height',
               'isSP',

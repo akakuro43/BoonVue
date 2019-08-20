@@ -30,7 +30,7 @@
           centeredSlides: { type: Boolean, default: true },
         },
         computed: {
-            ...mapState('window', [
+            ...mapState('device', [
                 'isTouch',
                 'isPC'
             ]),

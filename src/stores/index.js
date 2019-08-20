@@ -1,16 +1,18 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import moduleWindow from './window/index';
+import moduleDevice from './device/index';
 import moduleScroll from './scroll/index';
 import moduleMouse from './mouse/index';
+import modulePage from './page/index';
 
 Vue.use(Vuex);
 const store = new Vuex.Store({
     modules: {
-        window: moduleWindow,
+        device: moduleDevice,
         scroll: moduleScroll,
         mouse: moduleMouse,
+        page: modulePage,
     },
     strict: true,
 });

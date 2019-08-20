@@ -24,7 +24,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('window', [
+    ...mapState('device', [
         'device',
     ]),
   },

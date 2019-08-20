@@ -35,7 +35,7 @@ export default {
     cling
   },
   computed: {
-      ...mapState('window', [
+      ...mapState('device', [
           'height',
           'isPC',
           'isSP'

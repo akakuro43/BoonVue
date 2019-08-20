@@ -13,7 +13,7 @@
     export default {
         name: 'cling',
         computed: {
-            ...mapState('window', [
+            ...mapState('device', [
                 'isTouch',
                 'isPC'
             ]),

@@ -61,23 +61,29 @@
         this.update();
       },
       computed: {
-          ...mapState('window', [
+          ...mapState('device', [
               'width',
               'height',
               'isTouch',
               'isSP',
               'isPC',
               'device',
+          ]),
+          ...mapState('page', [
               'currentPage',
-              'isFirstPageAppear',
+              'isPageLoaded',
           ]),
       },
       methods: {
         ...mapActions(
-          'window', {
+          'device', {
             'windowResize': 'resize',
-            'windowAfterAppear': 'afterAppear',
-            'windowBeforeEnterPage': 'beforeEnterPage',
+          },
+        ),
+        ...mapActions(
+          'page', {
+            'setPageId': 'setPageId',
+            'loaded': 'loaded',
           },
         ),
         ...mapActions(
@@ -90,7 +96,7 @@
         // ----------------
         beforePageEnter(el) {
           let pageID =  document.querySelector('body').dataset.pageId;
-          this.windowBeforeEnterPage(pageID);
+          this.setPageId(pageID);
           console.log(this.currentPage);
           new UIDelayStepper(el).run();
           //- console.log(this.isFirstPageAppear)
@@ -157,7 +163,7 @@
         afterPageLeave() {
           //- console.log('afterPageLeave')
           this.$eventHub.$emit('afterPageLeave');
-          this.windowAfterAppear();
+          this.loaded();
           this.resize();
         },
         // ----------------

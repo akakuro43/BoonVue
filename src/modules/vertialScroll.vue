@@ -34,7 +34,7 @@
         },
 
         computed: {
-            ...mapState('window', [
+            ...mapState('device', [
                 'width',
                 'height',
                 'isTouch',

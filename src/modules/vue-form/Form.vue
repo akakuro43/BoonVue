@@ -121,7 +121,7 @@
     export default {
         name : "Form",
 				computed: {
-					...mapState('window', [ 'isSP' ]),
+					...mapState('device', [ 'isSP' ]),
 				},
         created() {
 						this.resize();
